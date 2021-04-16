@@ -1,6 +1,14 @@
 /* intuitivnejší box-sizing */
-html { box-sizing: border-box; }
-*, ::after, ::before { box-sizing: inherit; }
+html {
+  box-sizing: border-box;
+}
+*,
+::after,
+::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
 
 /*
 	BARVY
@@ -10,15 +18,154 @@ html { box-sizing: border-box; }
 
 	FONTY
 	Merriweather		základní font na stránce
-	Raleway					nadpisy a menu
+	Raleway					nadpisy a menu 
+	font-family: 'Raleway', sans-serif;
 	Oba fonty jsou dostupné na Google Fonts.
 */
 
 body {
-	margin: 0;
-	padding: 0;
-	background-color: #f5f5f5;
-	font-size: 16px;
-	line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: 'Merriweather', serif;
 }
 
+:root {
+  --gray-bg: #f5f5f5;
+  --blue: #629fe0;
+}
+
+/* header */
+header {
+  background-image: url(images/island-hlavicka.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+header h1 {
+  font-size: 52px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+.intro__text {
+  margin: 20px 0 30px 0;
+}
+
+.intro__author {
+  color: rgb(214, 214, 214);
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.intro__author::before {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 2px;
+  background-color: rgb(214, 214, 214);
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+/*  main - společné */
+.container {
+  padding: 5px 30px;
+}
+
+main p {
+  margin: 20px 0;
+}
+
+h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 70px;
+  height: 4px;
+  background-color: var(--blue);
+  margin-top: 20px;
+  margin-left: -30px;
+}
+/*  navigation */
+nav ul {
+  text-align: center;
+  margin: 20px 0;
+}
+
+nav ul li {
+  border-bottom: 1px solid var(--gray-bg);
+  text-transform: uppercase;
+  margin: 0 auto;
+  list-style-type: none;
+  padding: 5px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: gray;
+  font-family: 'Raleway', sans-serif;
+}
+/* sekce Úvod  */
+.basic-info img {
+  width: 100%;
+}
+
+.photo {
+  font-size: 12px;
+  color: gray;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  margin: 0 0 30px 0;
+}
+
+.photo a {
+  color: gray;
+}
+
+/* sekce Fotogalerie  */
+.galellery__photos {
+  margin-top: 20px;
+}
+.photogallery img {
+  display: block;
+  margin: 0 auto;
+}
+
+.photogallery p {
+  margin-top: 0;
+  color: gray;
+  text-align: center;
+  font-size: 12px;
+}
+.photogallery p::first-line {
+  font-weight: 700;
+}
+
+.photogallery a {
+  color: gray;
+}
+
+/* footer */
+footer {
+  background-color: var(--gray-bg);
+  box-shadow: 1px 1px 5px (gray);
+  padding: 10px;
+  font-size: 12px;
+  color: gray;
+}
+
+footer a {
+  color: gray;
+}
